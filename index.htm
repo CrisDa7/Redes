@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuestionario de Redes de Computadoras</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    .correct-answer {
+      color: green;
+      font-weight: bold;
+    }
+    .incorrect-answer {
+      color: red;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <h2 class="mb-4 text-center text-primary">Cuestionario de Redes</h2>
+  <form id="quizForm">
+    <!-- Preguntas (solo las primeras 3 como ejemplo) -->
+    <div class="question">
+      <label><strong>1. ¿Qué es una red de computadoras?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q1" value="A"> A) Un grupo de programas conectados entre sí
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q1" value="B"> B) Conjunto de computadoras interconectadas que comparten recursos
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q1" value="C"> C) Un servidor de almacenamiento masivo
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q1" value="D"> D) Un sistema operativo para la comunicación
+      </div>
+    </div>
+
+    <div class="question">
+      <label><strong>2. ¿Cuál de los siguientes no es un recurso que puede compartir una red?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q2" value="A"> A) Impresoras
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q2" value="B"> B) Archivos
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q2" value="C"> C) Computadoras
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q2" value="D"> D) Usuarios
+      </div>
+    </div>
+
+    <div class="question">
+      <label><strong>3. ¿Qué componente permite la conexión de múltiples computadoras a una red?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q3" value="A"> A) Monitor
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q3" value="B"> B) Tarjeta gráfica
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q3" value="C"> C) Tarjeta de red (NIC)
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q3" value="D"> D) Fuente de poder
+      </div>
+    </div>
+        <!-- Pregunta 4 -->
+    <div class="question">
+      <label><strong>4. ¿Cuál es una ventaja principal de las redes?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q4" value="A"> A) Aumenta el consumo eléctrico
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q4" value="B"> B) Reduce el rendimiento del sistema
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q4" value="C"> C) Compartir recursos
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q4" value="D"> D) Disminuye la velocidad de procesamiento
+      </div>
+    </div>
+    <!-- Respuesta: C -->
+
+    <!-- Pregunta 5 -->
+    <div class="question">
+      <label><strong>5. ¿Cuál de las siguientes NO es una desventaja de una red?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q5" value="A"> A) Mayor riesgo de virus
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q5" value="B"> B) Costos iniciales elevados
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q5" value="C"> C) Rapidez en el acceso a información
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q5" value="D"> D) Dependencia del servidor
+      </div>
+    </div>
+    <!-- Respuesta: C -->
+
+    <!-- Pregunta 6 -->
+    <div class="question">
+      <label><strong>6. ¿Qué tipo de red cubre un área geográfica limitada como una oficina o edificio?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q6" value="A"> A) WAN
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q6" value="B"> B) MAN
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q6" value="C"> C) LAN
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q6" value="D"> D) CAN
+      </div>
+    </div>
+    <!-- Respuesta: C -->
+
+    <!-- Pregunta 7 -->
+    <div class="question">
+      <label><strong>7. ¿Qué significa WAN?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q7" value="A"> A) Wide Area Network
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q7" value="B"> B) Wireless Area Network
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q7" value="C"> C) Wired Area Network
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q7" value="D"> D) Wide Access Network
+      </div>
+    </div>
+    <!-- Respuesta: A -->
+
+    <!-- Pregunta 8 -->
+    <div class="question">
+      <label><strong>8. ¿Qué red abarca una ciudad completa?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q8" value="A"> A) LAN
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q8" value="B"> B) PAN
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q8" value="C"> C) MAN
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q8" value="D"> D) NAN
+      </div>
+    </div>
+    <!-- Respuesta: C -->
+
+    <!-- Pregunta 9 -->
+    <div class="question">
+      <label><strong>9. ¿Qué topología de red tiene un nodo central al que todos los demás están conectados?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q9" value="A"> A) Estrella
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q9" value="B"> B) Bus
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q9" value="C"> C) Anillo
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q9" value="D"> D) Malla
+      </div>
+    </div>
+    <!-- Respuesta: A -->
+
+    <!-- Pregunta 10 -->
+    <div class="question">
+      <label><strong>10. ¿Cuál es la principal desventaja de la topología en bus?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q10" value="A"> A) Fácil de instalar
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q10" value="B"> B) Fallo en el cable afecta a toda la red
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q10" value="C"> C) Bajo costo
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q10" value="D"> D) Alto rendimiento
+      </div>
+    </div>
+    <!-- Respuesta: B -->
+
+    <!-- Pregunta 11 -->
+    <div class="question">
+      <label><strong>11. ¿Qué topología de red conecta cada nodo con todos los demás?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q11" value="A"> A) Estrella
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q11" value="B"> B) Malla
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q11" value="C"> C) Anillo
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q11" value="D"> D) Árbol
+      </div>
+    </div>
+    <!-- Respuesta: B -->
+
+    <!-- Pregunta 12 -->
+    <div class="question">
+      <label><strong>12. ¿Qué dispositivo interconecta varias redes y dirige los paquetes de datos?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q12" value="A"> A) Switch
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q12" value="B"> B) Hub
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q12" value="C"> C) Router
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q12" value="D"> D) Módem
+      </div>
+    </div>
+    <!-- Respuesta: C -->
+
+    <!-- Pregunta 13 -->
+    <div class="question">
+      <label><strong>13. ¿Cuál es la función de un switch?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q13" value="A"> A) Repetir la señal
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q13" value="B"> B) Dirigir paquetes dentro de una red local
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q13" value="C"> C) Convertir señales digitales en analógicas
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q13" value="D"> D) Conectar dos redes distintas
+      </div>
+    </div>
+    <!-- Respuesta: B -->
+
+    <!-- Pregunta 14 -->
+    <div class="question">
+      <label><strong>14. ¿Qué es un módem?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q14" value="A"> A) Dispositivo para almacenar información
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q14" value="B"> B) Convertidor de señal digital a analógica
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q14" value="C"> C) Impresora de red
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q14" value="D"> D) Sistema operativo de red
+      </div>
+    </div>
+    <!-- Respuesta: B -->
+
+    <!-- Pregunta 15 -->
+    <div class="question">
+      <label><strong>15. ¿Cuál de los siguientes es un protocolo de comunicación en redes?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q15" value="A"> A) HTML
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q15" value="B"> B) HTTP
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q15" value="C"> C) PNG
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q15" value="D"> D) DOC
+      </div>
+    </div>
+    <!-- Respuesta: B -->
+
+    <!-- Pregunta 16 -->
+    <div class="question">
+      <label><strong>16. ¿Cuál es el propósito principal de un servidor en red?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q16" value="A"> A) Diseñar páginas web
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q16" value="B"> B) Almacenar y compartir recursos
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q16" value="C"> C) Escanear virus
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q16" value="D"> D) Crear animaciones
+      </div>
+    </div>
+    <!-- Respuesta: B -->
+
+    <!-- Pregunta 17 -->
+    <div class="question">
+      <label><strong>17. ¿Qué es una intranet?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q17" value="A"> A) Red de área amplia
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q17" value="B"> B) Internet libre
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q17" value="C"> C) Red interna de una organización
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q17" value="D"> D) Red social
+      </div>
+    </div>
+    <!-- Respuesta: C -->
+
+    <!-- Pregunta 18 -->
+    <div class="question">
+      <label><strong>18. ¿Qué protocolo se usa para enviar correos electrónicos?</strong></label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q18" value="A"> A) FTP
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q18" value="B"> B) SMTP
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q18" value="C"> C) HTTP
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q18" value="D"> D) DNS
+      </div>
+    </div>
+    <!-- Respuesta: B -->
+    <!-- Pregunta 19 -->
+<div class="question">
+  <label><strong>19. ¿Qué protocolo se usa para transferir archivos?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q19" value="A"> A) HTTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q19" value="B"> B) FTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q19" value="C"> C) SMTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q19" value="D"> D) IP</div>
+</div>
+
+<!-- Pregunta 20 -->
+<div class="question">
+  <label><strong>20. ¿Qué significa IP en redes?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q20" value="A"> A) Internet Processor</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q20" value="B"> B) Inter Protocol</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q20" value="C"> C) Internet Protocol</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q20" value="D"> D) Internal Processing</div>
+</div>
+
+<!-- Pregunta 21 -->
+<div class="question">
+  <label><strong>21. ¿Cuál es el número máximo de direcciones en IPv4?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q21" value="A"> A) 2^16</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q21" value="B"> B) 2^32</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q21" value="C"> C) 2^64</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q21" value="D"> D) 256</div>
+</div>
+
+<!-- Pregunta 22 -->
+<div class="question">
+  <label><strong>22. ¿Cuál es una dirección IP válida?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q22" value="A"> A) 192.168.1.1</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q22" value="B"> B) 500.20.30.40</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q22" value="C"> C) 999.999.999.999</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q22" value="D"> D) 12.34.56</div>
+</div>
+
+<!-- Pregunta 23 -->
+<div class="question">
+  <label><strong>23. ¿Qué hace un firewall en una red?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q23" value="A"> A) Aumenta la velocidad</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q23" value="B"> B) Controla el acceso y protege la red</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q23" value="C"> C) Conecta redes LAN</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q23" value="D"> D) Reparte archivos</div>
+</div>
+
+<!-- Pregunta 24 -->
+<div class="question">
+  <label><strong>24. ¿Qué es un host en una red?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q24" value="A"> A) Cable de conexión</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q24" value="B"> B) Programa de edición</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q24" value="C"> C) Dispositivo conectado a una red</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q24" value="D"> D) Servidor web</div>
+</div>
+
+<!-- Pregunta 25 -->
+<div class="question">
+  <label><strong>25. ¿Qué permite el modelo OSI?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q25" value="A"> A) Crear videojuegos</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q25" value="B"> B) Facilitar la comunicación en red</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q25" value="C"> C) Enviar correos</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q25" value="D"> D) Ver películas</div>
+</div>
+
+<!-- Pregunta 26 -->
+<div class="question">
+  <label><strong>26. ¿Cuántas capas tiene el modelo OSI?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q26" value="A"> A) 5</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q26" value="B"> B) 6</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q26" value="C"> C) 7</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q26" value="D"> D) 4</div>
+</div>
+
+<!-- Pregunta 27 -->
+<div class="question">
+  <label><strong>27. ¿Cuál es la primera capa del modelo OSI?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q27" value="A"> A) Aplicación</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q27" value="B"> B) Presentación</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q27" value="C"> C) Transporte</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q27" value="D"> D) Física</div>
+</div>
+
+<!-- Pregunta 28 -->
+<div class="question">
+  <label><strong>28. ¿Cuál capa del modelo OSI se encarga de la entrega punto a punto?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q28" value="A"> A) Transporte</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q28" value="B"> B) Red</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q28" value="C"> C) Aplicación</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q28" value="D"> D) Sesión</div>
+</div>
+
+<!-- Pregunta 29 -->
+<div class="question">
+  <label><strong>29. ¿Qué capa del modelo OSI traduce y codifica los datos?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q29" value="A"> A) Aplicación</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q29" value="B"> B) Presentación</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q29" value="C"> C) Enlace de datos</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q29" value="D"> D) Red</div>
+</div>
+
+<!-- Pregunta 30 -->
+<div class="question">
+  <label><strong>30. ¿Qué capa del modelo OSI maneja direcciones IP?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q30" value="A"> A) Red</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q30" value="B"> B) Física</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q30" value="C"> C) Transporte</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q30" value="D"> D) Sesión</div>
+</div>
+
+<!-- Pregunta 31 -->
+<div class="question">
+  <label><strong>31. ¿Qué tipo de red es ideal para un hogar?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q31" value="A"> A) WAN</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q31" value="B"> B) MAN</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q31" value="C"> C) LAN</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q31" value="D"> D) SAN</div>
+</div>
+
+<!-- Pregunta 32 -->
+<div class="question">
+  <label><strong>32. ¿Qué se entiende por ancho de banda?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q32" value="A"> A) Longitud del cable</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q32" value="B"> B) Cantidad de datos transmitidos por segundo</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q32" value="C"> C) Distancia entre dos nodos</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q32" value="D"> D) Número de computadoras conectadas</div>
+</div>
+
+<!-- Pregunta 33 -->
+<div class="question">
+  <label><strong>33. ¿Qué es el cable coaxial?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q33" value="A"> A) Tipo de fibra óptica</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q33" value="B"> B) Cable con núcleo de cobre</div> <!-- Respuesta correcta -->
+  <div class="form-check"><input class="form-check-input" type="radio" name="q33" value="C"> C) Cable para corriente eléctrica</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q33" value="D"> D) Cable para sonido</div>
+</div>
+
+<!-- Pregunta 34 -->
+<div class="question">
+  <label><strong>34. ¿Qué medio de transmisión usa pulsos de luz?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q34" value="A"> A) Coaxial</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q34" value="B"> B) UTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q34" value="C"> C) Fibra óptica</div> <!-- Respuesta correcta -->
+  <div class="form-check"><input class="form-check-input" type="radio" name="q34" value="D"> D) Infrarrojo</div>
+</div>
+
+<!-- Pregunta 35 -->
+<div class="question">
+  <label><strong>35. ¿Cuál es una desventaja de la fibra óptica?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q35" value="A"> A) Alta velocidad</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q35" value="B"> B) Bajo costo</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q35" value="C"> C) Difícil instalación</div> <!-- Respuesta correcta -->
+  <div class="form-check"><input class="form-check-input" type="radio" name="q35" value="D"> D) Poco segura</div>
+</div>
+
+<!-- Pregunta 36 -->
+<div class="question">
+  <label><strong>36. ¿Qué tecnología permite la conexión inalámbrica a internet?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q36" value="A"> A) Ethernet</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q36" value="B"> B) Cable coaxial</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q36" value="C"> C) Wi-Fi</div> <!-- Respuesta correcta -->
+  <div class="form-check"><input class="form-check-input" type="radio" name="q36" value="D"> D) USB</div>
+</div>
+
+<!-- Pregunta 37 -->
+<div class="question">
+  <label><strong>37. ¿Qué componente asigna direcciones IP en una red doméstica?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q37" value="A"> A) Switch</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q37" value="B"> B) Router</div> <!-- Respuesta correcta -->
+  <div class="form-check"><input class="form-check-input" type="radio" name="q37" value="C"> C) Hub</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q37" value="D"> D) Tarjeta de sonido</div>
+</div>
+
+<!-- Pregunta 38 -->
+<div class="question">
+  <label><strong>38. ¿Qué tipo de cable es más común en redes LAN?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q38" value="A"> A) Coaxial</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q38" value="B"> B) Fibra óptica</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q38" value="C"> C) Par trenzado (UTP)</div> <!-- Respuesta correcta -->
+  <div class="form-check"><input class="form-check-input" type="radio" name="q38" value="D"> D) HDMI</div>
+</div>
+
+<!-- Pregunta 39 -->
+<div class="question">
+  <label><strong>39. ¿Qué estándar define la conexión Wi-Fi?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q39" value="A"> A) IEEE 802.3</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q39" value="B"> B) IEEE 802.11</div> <!-- Respuesta correcta -->
+  <div class="form-check"><input class="form-check-input" type="radio" name="q39" value="C"> C) IEEE 802.1X</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q39" value="D"> D) IEEE 802.5</div>
+</div>
+
+<!-- Pregunta 40 -->
+<div class="question">
+  <label><strong>40. ¿Cuál es una función del DNS?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q40" value="A"> A) Asignar direcciones físicas</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q40" value="B"> B) Resolver nombres de dominio a IP</div> <!-- Respuesta correcta -->
+  <div class="form-check"><input class="form-check-input" type="radio" name="q40" value="C"> C) Filtrar tráfico web</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q40" value="D"> D) Cifrar datos</div>
+</div>
+<!-- Pregunta 40 -->
+<div class="question">
+  <label><strong>40. ¿Cuál es una función del DNS?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q40" value="A"> A) Asignar direcciones físicas</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q40" value="B"> B) Resolver nombres de dominio a IP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q40" value="C"> C) Filtrar tráfico web</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q40" value="D"> D) Cifrar datos</div>
+</div>
+
+<!-- Pregunta 41 -->
+<div class="question">
+  <label><strong>41. ¿Qué tecnología usa la red telefónica conmutada?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q41" value="A"> A) Paquetes</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q41" value="B"> B) Circuitos</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q41" value="C"> C) Satélites</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q41" value="D"> D) Wi-Fi</div>
+</div>
+
+<!-- Pregunta 42 -->
+<div class="question">
+  <label><strong>42. ¿Qué significa ISP?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q42" value="A"> A) Inter Secure Protocol</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q42" value="B"> B) Internet Signal Provider</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q42" value="C"> C) Internet Service Provider</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q42" value="D"> D) Internal Server Processor</div>
+</div>
+
+<!-- Pregunta 43 -->
+<div class="question">
+  <label><strong>43. ¿Qué hace un hub en la red?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q43" value="A"> A) Conecta diferentes redes</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q43" value="B"> B) Transfiere datos a todos los puertos</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q43" value="C"> C) Filtra tráfico</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q43" value="D"> D) Asigna direcciones</div>
+</div>
+
+<!-- Pregunta 44 -->
+<div class="question">
+  <label><strong>44. ¿Cuál es una característica del modelo cliente-servidor?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q44" value="A"> A) Todos los equipos son iguales</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q44" value="B"> B) Uno solicita servicios y otro los entrega</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q44" value="C"> C) Solo permite acceso local</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q44" value="D"> D) No tiene jerarquías</div>
+</div>
+
+<!-- Pregunta 45 -->
+<div class="question">
+  <label><strong>45. ¿Qué significa HTTP?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q45" value="A"> A) HyperText Transmission Protocol</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q45" value="B"> B) High Transfer Technology Protocol</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q45" value="C"> C) HyperText Transfer Protocol</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q45" value="D"> D) Host Transfer Text Protocol</div>
+</div>
+
+<!-- Pregunta 46 -->
+<div class="question">
+  <label><strong>46. ¿Qué tipo de red se forma al compartir archivos entre computadoras sin servidor central?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q46" value="A"> A) Cliente-servidor</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q46" value="B"> B) Peer-to-peer</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q46" value="C"> C) WAN</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q46" value="D"> D) VLAN</div>
+</div>
+
+<!-- Pregunta 47 -->
+<div class="question">
+  <label><strong>47. ¿Qué significa NIC?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q47" value="A"> A) Network Interface Card</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q47" value="B"> B) New Internet Cable</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q47" value="C"> C) Net Integrated Chip</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q47" value="D"> D) Network Internal Connector</div>
+</div>
+
+<!-- Pregunta 48 -->
+<div class="question">
+  <label><strong>48. ¿Qué dispositivo amplifica señales en la red?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q48" value="A"> A) Repetidor</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q48" value="B"> B) Hub</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q48" value="C"> C) Router</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q48" value="D"> D) Servidor</div>
+</div>
+
+<!-- Pregunta 49 -->
+<div class="question">
+  <label><strong>49. ¿Qué tipo de red es usada en una universidad completa?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q49" value="A"> A) LAN</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q49" value="B"> B) MAN</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q49" value="C"> C) WAN</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q49" value="D"> D) PAN</div>
+</div>
+
+<!-- Pregunta 50 -->
+<div class="question">
+  <label><strong>50. ¿Qué permite el protocolo TCP?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q50" value="A"> A) Transferencias inseguras</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q50" value="B"> B) Fragmentación sin orden</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q50" value="C"> C) Conexión confiable entre dispositivos</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q50" value="D"> D) Acceso aleatorio</div>
+</div>
+
+<!-- Pregunta 51 -->
+<div class="question">
+  <label><strong>51. ¿Qué componente se encarga de asignar dinámicamente direcciones IP?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q51" value="A"> A) Switch</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q51" value="B"> B) DHCP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q51" value="C"> C) DNS</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q51" value="D"> D) ARP</div>
+</div>
+
+<!-- Pregunta 52 -->
+<div class="question">
+  <label><strong>52. ¿Qué protocolo permite la resolución de nombres de host a direcciones IP?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q52" value="A"> A) SMTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q52" value="B"> B) FTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q52" value="C"> C) DNS</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q52" value="D"> D) ICMP</div>
+</div>
+
+<!-- Pregunta 53 -->
+<div class="question">
+  <label><strong>53. ¿Qué comando se utiliza para verificar la conectividad con otra máquina?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q53" value="A"> A) nslookup</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q53" value="B"> B) ping</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q53" value="C"> C) tracert</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q53" value="D"> D) ipconfig</div>
+</div>
+
+<!-- Pregunta 54 -->
+<div class="question">
+  <label><strong>54. ¿Qué tipo de dirección IP no cambia con el tiempo?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q54" value="A"> A) IP dinámica</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q54" value="B"> B) IP compartida</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q54" value="C"> C) IP pública</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q54" value="D"> D) IP estática</div>
+</div>
+
+<!-- Pregunta 55 -->
+<div class="question">
+  <label><strong>55. ¿Qué dirección IP es reservada para localhost?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q55" value="A"> A) 192.168.0.1</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q55" value="B"> B) 255.255.255.0</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q55" value="C"> C) 127.0.0.1</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q55" value="D"> D) 0.0.0.0</div>
+</div>
+
+<!-- Pregunta 56 -->
+<div class="question">
+  <label><strong>56. ¿Qué protocolo se usa para navegar por páginas web?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q56" value="A"> A) FTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q56" value="B"> B) HTTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q56" value="C"> C) SMTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q56" value="D"> D) SSH</div>
+</div>
+
+<!-- Pregunta 57 -->
+<div class="question">
+  <label><strong>57. ¿Qué herramienta muestra la ruta que toma un paquete a través de una red?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q57" value="A"> A) ping</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q57" value="B"> B) ipconfig</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q57" value="C"> C) netstat</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q57" value="D"> D) tracert</div>
+</div>
+
+<!-- Pregunta 58 -->
+<div class="question">
+  <label><strong>58. ¿Qué puerto utiliza el protocolo HTTP?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q58" value="A"> A) 21</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q58" value="B"> B) 80</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q58" value="C"> C) 25</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q58" value="D"> D) 443</div>
+</div>
+
+<!-- Pregunta 59 -->
+<div class="question">
+  <label><strong>59. ¿Cuál es la función de ARP en una red?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q59" value="A"> A) Conectar diferentes redes</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q59" value="B"> B) Obtener dirección MAC desde una IP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q59" value="C"> C) Controlar acceso al medio</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q59" value="D"> D) Compartir archivos</div>
+</div>
+
+<!-- Pregunta 60 -->
+<div class="question">
+  <label><strong>60. ¿Qué tipo de cable tiene mayor resistencia a interferencias electromagnéticas?</strong></label>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q60" value="A"> A) UTP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q60" value="B"> B) STP</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q60" value="C"> C) Coaxial</div>
+  <div class="form-check"><input class="form-check-input" type="radio" name="q60" value="D"> D) HDMI</div>
+</div>
+
+
+
+    <!-- Agrega el resto de las preguntas aquí -->
+
+    <button type="submit" class="btn btn-success mt-3">Finalizar Cuestionario</button>
+  </form>
+
+  <div id="result" class="alert alert-primary mt-4 hidden"></div>
+
+  <div id="review" class="mt-4 hidden">
+    <h4>📘 Revisión de respuestas</h4>
+    <ul id="reviewList" class="list-group"></ul>
+  </div>
+</div>
+
+<script>
+  const respuestasCorrectas = {
+    q1: 'B', q2: 'D', q3: 'C', q4: 'C', q5: 'C', q6: 'C', q7: 'A', q8: 'C',
+    q9: 'A', q10: 'B', q11: 'B', q12: 'C', q13: 'B', q14: 'B', q15: 'B',
+    q16: 'B', q17: 'C', q18: 'B', q19: 'B', q20: 'C', q21: 'B', q22: 'A',
+    q23: 'B', q24: 'C', q25: 'B', q26: 'C', q27: 'D', q28: 'A', q29: 'B',
+    q30: 'A', q31: 'C', q32: 'B', q33: 'B', q34: 'C', q35: 'C', q36: 'C',
+    q37: 'B', q38: 'C', q39: 'B', q40: 'B', q41: 'B', q42: 'C', q43: 'B',
+    q44: 'B', q45: 'C', q46: 'B', q47: 'A', q48: 'A', q49: 'B', q50: 'C',
+    q51: 'B', q52: 'C', q53: 'B', q54: 'D', q55: 'C', q56: 'B', q57: 'D',
+    q58: 'B', q59: 'B', q60: 'B'
+  };
+
+  document.getElementById('quizForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let puntaje = 0;
+    let total = Object.keys(respuestasCorrectas).length;
+    const reviewList = document.getElementById('reviewList');
+    reviewList.innerHTML = "";
+
+    for (let key in respuestasCorrectas) {
+      const seleccionada = document.querySelector(`input[name="${key}"]:checked`);
+      const correcta = respuestasCorrectas[key];
+      const li = document.createElement('li');
+      li.classList.add('list-group-item');
+
+      if (seleccionada && seleccionada.value === correcta) {
+        puntaje++;
+        li.innerHTML = `<span class="correct-answer">✔ ${key.toUpperCase()}: Correcta</span>`;
+      } else if (seleccionada) {
+        li.innerHTML = `<span class="incorrect-answer">✖ ${key.toUpperCase()}: Incorrecta. Elegiste "${seleccionada.value}", la correcta es "${correcta}"</span>`;
+      } else {
+        li.innerHTML = `<span class="incorrect-answer">✖ ${key.toUpperCase()}: No respondida. La correcta es "${correcta}"</span>`;
+      }
+
+      reviewList.appendChild(li);
+    }
+
+    document.getElementById('result').innerHTML = `<strong>Resultado:</strong> Obtuviste <span class="text-success">${puntaje}/${total}</span>`;
+    document.getElementById('result').classList.remove('hidden');
+    document.getElementById('review').classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>
